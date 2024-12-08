@@ -1,0 +1,8 @@
+future problems that computer can learn, such as computer vision, sensor and nlp.
+what is cool things? some can agree an action can be cool some just say it is a normal action.
+
+if imitate can produce an action beyond what it copy from, and that action impress human, then this is intelligence.
+if imitate definition is just copy, then there is no intelligence involve.. it is just plain dummy. 
+
+autonmous and adaptive system are two important characteristics an AI exhibit that enable the devices such as robot, car or drone to be more intelligence.
+if these devices unable to adapt or be autoomous due to new territories that it has not train for, then this can be bad.
