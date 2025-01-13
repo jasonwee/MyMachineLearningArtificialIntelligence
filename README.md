@@ -43,3 +43,4 @@ They can generate human-quality text for tasks such as content creation, writing
  * https://www.cloudskillsboost.google/journeys/118/course_templates/539
 * https://www.codecademy.com/learn/intro-to-llms
 * https://www.datacamp.com/tutorial/how-to-train-a-llm-with-pytorch
+* https://www.youtube.com/watch?v=UU1WVnMk4E8
