@@ -1,0 +1,14 @@
+pip==23.3.2
+# tflite-model-maker 0.4.x pulls TF 2.9 (the [and-cuda] extra only exists for TF >= 2.14)
+tensorflow==2.9.3
+# tensorflowjs 3.21 uses np.object (removed in numpy 1.24)
+numpy==1.23.5
+pandas==2.2.3
+tensorflowjs==3.21.0
+tflite-support==0.4.1
+tflite-model-maker==0.4.0
+# Keep tensorflowjs -> flax -> tensorstore on versions that have py3.9 wheels and accept numpy 1.23
+jax==0.4.18
+jaxlib==0.4.18
+flax==0.6.11
+tensorstore==0.1.45
