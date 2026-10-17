@@ -30,6 +30,6 @@
             }
         }
     },
-    // Hand the (previously root-owned) Claude volume to vscode, then install dependencies system-wide
-    "postCreateCommand": "sudo chown -R vscode:vscode /home/vscode/.claude && sudo python -m pip install -r requirements.txt"
+    // Hand the (previously root-owned) Claude volume to vscode; Python deps are baked into the image
+    "postCreateCommand": "sudo chown -R vscode:vscode /home/vscode/.claude"
 }

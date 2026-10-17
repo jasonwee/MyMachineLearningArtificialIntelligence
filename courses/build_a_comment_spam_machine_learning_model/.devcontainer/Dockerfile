@@ -36,6 +36,11 @@ RUN ln -sf /usr/bin/python3.9 /usr/bin/python && \
 # Force upgrade pip to your exact requested version milestone
 RUN python -m pip install --no-cache-dir pip==23.3.2
 
+# Install project dependencies system-wide (copied alone so code edits don't bust this layer)
+COPY requirements.txt /tmp/requirements.txt
+RUN python -m pip install --no-cache-dir -r /tmp/requirements.txt && \
+    rm /tmp/requirements.txt
+
 # Non-root user matching the host user's UID/GID, so files written to the
 # bind-mounted workspace stay owned by the host user instead of root
 ARG USERNAME=vscode
