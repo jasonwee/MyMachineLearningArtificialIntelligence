@@ -61,6 +61,6 @@ docker push jasonwee/spam-model:gpu-nvidia
 
 # check image is okay and gpu can be list
 ```
-docker run --gpus all -it -v "$(pwd)":/workspace -w /workspace tflite-gpu bash
+docker run --gpus all -it -v "$(pwd)":/workspace -w /workspace jasonwee/spam-model:gpu-nvidia bash
 python -c "import tensorflow as tf; print('Num GPUs Available: ', len(tf.config.list_physical_devices('GPU')))"
 ```
