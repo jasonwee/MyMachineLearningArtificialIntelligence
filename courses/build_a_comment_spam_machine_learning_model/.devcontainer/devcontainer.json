@@ -1,0 +1,35 @@
+{
+    "name": "TFLite Model Maker GPU Hub",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    // Required: Links your host Linux Nvidia GTX 1650 into the container
+    "runArgs": [
+        "--gpus=all"
+    ],
+    // Persist Claude Code login/settings across rebuilds in a named Docker volume
+    "mounts": [
+        "source=claude-code-config,target=/home/vscode/.claude,type=volume"
+    ],
+    // Keep .claude.json inside the persisted folder too (default is ~/.claude.json)
+    "containerEnv": {
+        "CLAUDE_CONFIG_DIR": "/home/vscode/.claude"
+    },
+    // Run as non-root; UID/GID is synced to the host user so workspace files aren't root-owned
+    "remoteUser": "vscode",
+    "updateRemoteUserUID": true,
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "anthropic.claude-code",
+                "ms-python.python",
+                "ms-python.vscode-pylance"
+            ],
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/bin/python3.9"
+            }
+        }
+    },
+    // Hand the (previously root-owned) Claude volume to vscode, then install dependencies system-wide
+    "postCreateCommand": "sudo chown -R vscode:vscode /home/vscode/.claude && sudo python -m pip install -r requirements.txt"
+}
